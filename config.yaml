@@ -1,4 +1,4 @@
-param:
+setting:
   array_library: numpy
 model:
   neurons:
@@ -30,50 +30,50 @@ model:
       from: P_E
       to: P_E
       synapse: SingleExponentialSynapse
-        g: "xp.zeros((N_from, N_to))"
-        W: "~xp.eye(N_from, dtype=xp.bool) * 0.104e-9"
-        tau: 2.e-3
+      g: "xp.zeros((N_from, N_to))"
+      W: "~xp.eye(N_from, dtype=xp.bool) * 0.104e-9"
+      tau: 2.e-3
     E_I_AMPA:
       from: P_E
       to: P_I
       synapse: SingleExponentialSynapse
-        g: "xp.zeros((N_from, N_to))"
-        W: "xp.ones((N_from, N_to)) * 0.081e-9"
-        tau: 2.e-3
+      g: "xp.zeros((N_from, N_to))"
+      W: "xp.ones((N_from, N_to)) * 0.081e-9"
+      tau: 2.e-3
     E_E_NMDA:
       from: P_E
       to: P_E
       synapse: DoubleExponentialSynapse
-        g: "xp.zeros((N_from, N_to))"
-        W: "~xp.eye(N_from, dtype=xp.bool) * 0.327e-9"
-        tau_rise: 2.e-3
-        tau_decay: 100.e-3
+      g: "xp.zeros((N_from, N_to))"
+      W: "~xp.eye(N_from, dtype=xp.bool) * 0.327e-9"
+      tau_rise: 2.e-3
+      tau_decay: 100.e-3
     E_I_NMDA:
       from: P_E
       to: P_I
       synapse: DoubleExponentialSynapse
-        g: "xp.zeros((N_from, N_to))"
-        W: "xp.ones((N_from, N_to)) * 0.258e-9"
-        tau_rise: 2.e-3
-        tau_decay: 100.e-3
+      g: "xp.zeros((N_from, N_to))"
+      W: "xp.ones((N_from, N_to)) * 0.258e-9"
+      tau_rise: 2.e-3
+      tau_decay: 100.e-3
     I_I_GABA:
       from: P_I
       to: P_I
       synapse: SingleExponentialSynapse
-        g: "xp.zeros((N_from, N_to))"
-        W: "~xp.eye(N_from, xp.bool) * -0.973e-9"
-        tau: 10.e-3
+      g: "xp.zeros((N_from, N_to))"
+      W: "~xp.eye(N_from, xp.bool) * -0.973e-9"
+      tau: 10.e-3
     I_E_GABA:
       from: P_I
       to: P_E
       synapse: SingleExponentialSynapse
-        g: "xp.zeros((N_from, N_to))"
-        W: "xp.ones((N_from, N_to)) * -1.25e-8"
-        tau: 10.e-3
+      g: "xp.zeros((N_from, N_to))"
+      W: "xp.ones((N_from, N_to)) * -1.25e-8"
+      tau: 10.e-3
     stim_E_AMPA:
       from: stim
       to: P_E
       synapse: SingleExponentialSynapse
-        g: "xp.zeros((N_from, N_to))"
-        W: "xp.random.poisson(lam=1, size=(N_stim, N_E), dtype=xp.float32) * 0.1e-9"
-        tau: 2.e-3
+      g: "xp.zeros((N_from, N_to))"
+      W: "xp.random.poisson(lam=1, size=(N_stim, N_E), dtype=xp.float32) * 0.1e-9"
+      tau: 2.e-3

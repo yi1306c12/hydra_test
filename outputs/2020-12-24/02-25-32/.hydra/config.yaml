@@ -1,0 +1,6 @@
+param:
+  array_library: numpy
+model:
+  P_E:
+    'N': 800
+    threshold: -0.05

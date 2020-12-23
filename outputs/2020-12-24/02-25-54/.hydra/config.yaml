@@ -1,0 +1,8 @@
+param:
+  array_library: numpy
+model:
+  P_E:
+    'N': 800
+    threshold: -0.05
+  stim:
+    func: 'lambda t: xp.sin(40 * xp.pi * t) > (1 - 1e-3)'
